@@ -7,8 +7,8 @@
   ],
   "description": "Bower implementation of https://github.com/john-oc/acute-select",
   "main": [
-    "acute-select.js",
-    "acute-select.css"
+    "dist/acute-select.js",
+    "dist/acute-select.css"
   ],
   "keywords": [
     "angular",

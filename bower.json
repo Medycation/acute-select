@@ -1,14 +1,14 @@
 {
-  "name": "acute-select",
-  "version": "0.1.6",
-  "homepage": "https://github.com/Medycation/acute-select",
+  "name": "acute-select-new",
+  "version": "0.1.7",
+  "homepage": "https://github.com/sibeliusseraphini/acute-select",
   "authors": [
-    "Jason Aden <jasonaden@gmail.com>"
+    "Sibelius Seraphini"
   ],
   "description": "Bower implementation of https://github.com/john-oc/acute-select",
   "main": [
-    "acute-select.js",
-    "acute-select.css"
+    "dist/acute-select.js",
+    "dist/acute-select.css"
   ],
   "keywords": [
     "angular",

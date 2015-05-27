@@ -26,12 +26,12 @@ module.exports = function(config) {
       '../lib/angular.1.2.26.js',
       '../lib/angular-mocks.1.2.26.js',
       '../jasmine/spec/*.js',
-      '../acute.select/*.js'
+      '../acute.select/**/*.js'
     ],
 
     // list of files to exclude
     exclude: [
-      
+
     ],
 
 

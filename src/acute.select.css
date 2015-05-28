@@ -9,7 +9,7 @@
 
 .ac-select-wrapper, .ac-select-wrapper input, .ac-select-wrapper select {
     /*font-family: Arial;*/
-    font-size: 12px;
+    font-size: 14px;
     background-color: white;
 }
 
@@ -35,7 +35,7 @@
 }
 
 .ac-select-table {
-    padding-left: 2px;
+    padding-left: 1px;
     border-collapse: collapse;
     border-spacing: 0px;
     width: 100%;
@@ -62,8 +62,8 @@ td.ac-select-longest {
 }
 
 td.ac-select-image {
-    background-image: url('images/dropdown.gif');
-    background-repeat: no-repeat;
+    /*background-image: url('https://s3-sa-east-1.amazonaws.com/lar21css/dropdown.gif');
+    background-repeat: no-repeat;*//
     height: 21px;
     width: 19px !important;
     cursor: pointer;
@@ -175,7 +175,7 @@ td.ac-select-add {
 }
 
 .ac-select-popup li:hover {
-    background-color: #f0f0f0;   
+    background-color: #f0f0f0;
 }
 
 .ac-select-load-more {

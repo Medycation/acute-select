@@ -3,7 +3,9 @@
   "version": "0.1.7",
   "homepage": "https://github.com/sibeliusseraphini/acute-select",
   "authors": [
-    "Sibelius Seraphini"
+    "John O'Connor",
+    "Jason Aden <jasonaden@gmail.com>",
+    "Sibelius Seraphini <sibeliusseraphini@gmail.com>"
   ],
   "description": "Bower implementation of https://github.com/john-oc/acute-select",
   "main": [

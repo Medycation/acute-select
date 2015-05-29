@@ -8,6 +8,8 @@ function acuteSelectService() {
         'templatePath': '/acute.select/',
         'noItemsText': 'No items found.',
         'placeholderText': 'Please select...',
+        'loadingText': 'Loading...',
+        'placeholderSearch': 'search',
         'itemHeight': 24,
         'itemsInView': 10,
         'pageSize': null,
@@ -23,7 +25,8 @@ function acuteSelectService() {
         'minSearchLength': 0,
         'filterType': 'contains',    // or 'start'
         'allowClear': true,
-        'debug': false
+        'debug': false,
+        'customClass': ''
     };
 
     return {

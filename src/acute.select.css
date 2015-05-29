@@ -6,8 +6,8 @@
 .ac-select-wrapper.full {
     width: 100%;
 }
-
-.ac-select-wrapper, .ac-select-wrapper input, .ac-select-wrapper select {
+/*.ac-select-wrapper input*/
+.ac-select-wrapper, .ac-select-wrapper select {
     /*font-family: Arial;*/
     font-size: 14px;
     background-color: white;

@@ -5,7 +5,7 @@
             <tr>
                 <td class="ac-select-display">
                     <div class="ac-select-text-wrapper" ng-show="settings.comboMode">
-                        <input type="text" class="ac-select-text" ng-model="comboText" ac-focus="comboFocus" ac-select-on-focus ng-change="comboTextChange()"
+                        <input type="text" class="ac-select-text {{settings.customClass}}" ng-model="comboText" ac-focus="comboFocus" ac-select-on-focus ng-change="comboTextChange()"
                             placeholder="{{settings.placeholderText}}" watermark="{{settings.placeholderText}}" />
                     </div>
                     <span ng-hide="settings.comboMode">{{confirmedItem.text}}</span>
@@ -24,7 +24,7 @@
             <table>
                 <tr>
                     <td>
-                        <input type="text" class="ac-select-search" ng-model="searchText" placeholder="search" ac-focus="searchBoxFocus" ac-select-on-focus
+                        <input type="text" class="ac-select-search" ng-model="searchText" placeholder="{{settings.placeholderSearch}}" ac-focus="searchBoxFocus" ac-select-on-focus
                             ng-change="findData()" ng-keydown="keyHandler($event)" />
                     </td>
                     <td class="ac-select-add" ng-class="{ 'ac-select-disabled': matchFound }" title="Add" ng-show="settings.allowCustomText" ng-click="addButtonClick()">
@@ -41,7 +41,7 @@
                     {{item.text}}
                 </li>
             </ul>
-            <div class="ac-select-loading" ng-show="loading" ng-style="{ height: settings.itemHeight + 'px'}">Carregando...</div>
+            <div class="ac-select-loading" ng-show="loading" ng-style="{ height: settings.itemHeight + 'px'}">{{settings.loadingText}}</div>
         </div>
         <div class="ac-select-load-more" ng-show="allDataLoaded===false">
             {{items.length}} items<!-- of {{matchingItemTotal}}-->

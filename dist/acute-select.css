@@ -6,8 +6,8 @@
 .ac-select-wrapper.full {
     width: 100%;
 }
-
-.ac-select-wrapper, .ac-select-wrapper input, .ac-select-wrapper select {
+/*.ac-select-wrapper input*/
+.ac-select-wrapper, .ac-select-wrapper select {
     /*font-family: Arial;*/
     font-size: 14px;
     background-color: white;
@@ -212,6 +212,21 @@ td.ac-select-image .fa {
 .ac-select-main-open td.ac-select-image .fa:before {
     content:"\f077";
 }
+
+/* bootstrap glyphicons instead of font awesome */
+td.ac-select-image .glyphicon {
+  position: relative;
+  top: -3px;
+  font-size:15px;
+  color:#ccc;
+}
+.ac-select-main-closed td.ac-select-image .glyphicon:before {
+  content:"\e114";
+}
+.ac-select-main-open td.ac-select-image .glyphicon:before {
+  content:"\e113";
+}
+
 .ac-select-main {
     height:32px;
 }

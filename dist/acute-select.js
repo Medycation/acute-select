@@ -1023,6 +1023,8 @@ function acuteSelectService() {
         'templatePath': '/acute.select/',
         'noItemsText': 'No items found.',
         'placeholderText': 'Please select...',
+        'loadingText': 'Loading...',
+        'placeholderSearch': 'search',
         'itemHeight': 24,
         'itemsInView': 10,
         'pageSize': null,
@@ -1038,7 +1040,8 @@ function acuteSelectService() {
         'minSearchLength': 0,
         'filterType': 'contains',    // or 'start'
         'allowClear': true,
-        'debug': false
+        'debug': false,
+        'customClass': ''
     };
 
     return {
@@ -1118,16 +1121,16 @@ function safeApply($rootScope, $log) {
 
 
 angular.module("acute.select").run(['$templateCache', function(a) { a.put('/acute.select/template.html', '<div class="ac-select-wrapper" ng-keydown="keyHandler($event)" tabindex="999" ac-focus="wrapperFocus" ng-focus="comboFocus = true">\n' +
- '    <div ng-class="{\'ac-select-main\':true, \'ac-select-main-closed\':!popupVisible, \'ac-select-main-open\':popupVisible}" ng-click="mainClick($event)" ng-style="{\'minWidth\': settings.minWidth }">\n' +
+ '    <div ng-class="{\'ac-select-main\':true, \'ac-select-main-closed\':!popupVisible, \'ac-select-main-open\':popupVisible}" ng-click="mainClick($event)" ng-style="{\'minWidth\': settings.minWidth }" class="{{settings.customClass}}">\n' +
  '        <table class="ac-select-table" ng-click="togglePopup($event)">\n' +
  '            <tr>\n' +
  '                <td class="ac-select-display">\n' +
  '                    <div class="ac-select-text-wrapper" ng-show="settings.comboMode">\n' +
- '                        <input type="text" class="ac-select-text" ng-model="comboText" ac-focus="comboFocus" ac-select-on-focus ng-change="comboTextChange()" placeholder="{{settings.placeholderText}}" watermark="{{settings.placeholderText}}">\n' +
+ '                        <input type="text" class="ac-select-text {{settings.customClass}}" ng-model="comboText" ac-focus="comboFocus" ac-select-on-focus ng-change="comboTextChange()" placeholder="{{settings.placeholderText}}" watermark="{{settings.placeholderText}}">\n' +
  '                    </div>\n' +
  '                    <span ng-hide="settings.comboMode">{{confirmedItem.text}}</span>\n' +
  '                </td>\n' +
- '                <td class="ac-select-image"><i class="fa"></i></td>\n' +
+ '                <td class="ac-select-image"><i class="glyphicon"></i></td>\n' +
  '            </tr>\n' +
  '            <!--Row to get the control width right, using the original select or the longest item text. Hidden at runtime.-->\n' +
  '            <tr class="ac-select-widener">\n' +
@@ -1141,7 +1144,7 @@ angular.module("acute.select").run(['$templateCache', function(a) { a.put('/acut
  '            <table>\n' +
  '                <tr>\n' +
  '                    <td>\n' +
- '                        <input type="text" class="ac-select-search" ng-model="searchText" placeholder="search" ac-focus="searchBoxFocus" ac-select-on-focus ng-change="findData()" ng-keydown="keyHandler($event)">\n' +
+ '                        <input type="text" class="ac-select-search" ng-model="searchText" placeholder="{{settings.placeholderSearch}}" ac-focus="searchBoxFocus" ac-select-on-focus ng-change="findData()" ng-keydown="keyHandler($event)">\n' +
  '                    </td>\n' +
  '                    <td class="ac-select-add" ng-class="{ \'ac-select-disabled\': matchFound }" title="Add" ng-show="settings.allowCustomText" ng-click="addButtonClick()">\n' +
  '                        <div>+</div>\n' +
@@ -1156,7 +1159,7 @@ angular.module("acute.select").run(['$templateCache', function(a) { a.put('/acut
  '                    {{item.text}}\n' +
  '                </li>\n' +
  '            </ul>\n' +
- '            <div class="ac-select-loading" ng-show="loading" ng-style="{ height: settings.itemHeight + \'px\'}">Carregando...</div>\n' +
+ '            <div class="ac-select-loading" ng-show="loading" ng-style="{ height: settings.itemHeight + \'px\'}">{{settings.loadingText}}</div>\n' +
  '        </div>\n' +
  '        <div class="ac-select-load-more" ng-show="allDataLoaded===false">\n' +
  '            {{items.length}} items<!-- of {{matchingItemTotal}}-->\n' +

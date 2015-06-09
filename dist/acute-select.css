@@ -111,6 +111,10 @@ div.ac-select-no-items {
     border-width: 0px !important;
 }
 
+.ac-select-text:focus {
+    outline: 0;
+}
+
 
 .ac-select-search-wrapper {
     padding: 0 6px;

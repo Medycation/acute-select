@@ -35,12 +35,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/Medycation/acute-select.git"
+    "url": "git://github.com/sibeliusseraphini/acute-select
   },
   "author": "Jason Aden",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Medycation/acute-select/issues"
+    "url": "https://github.com/sibeliusseraphini/acute-select"
   },
-  "homepage": "https://github.com/Medycation/acute-select"
+  "homepage": "https://github.com/sibeliusseraphini/acute-select"
 }

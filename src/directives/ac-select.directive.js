@@ -8,7 +8,8 @@ function acSelect($parse, $log, acuteSelectService) {
     var directive = {
         restrict: 'EAC',
         scope: {
-            'acSettings': '@', 'acOptions': '@',
+            'acSettings': '@',
+            'acOptions': '@',
             'model': '=acModel',
             'acChange': '&',
             'keyField': '@acKey',
@@ -114,10 +115,8 @@ function acSelectController(
     // If the ac-refresh attribute is set, watch it. If its value gets set to true, re-initialise.
     if ($scope.acRefresh !== undefined) {
         $scope.$watch('acRefresh', function (newValue, oldValue) {
-            if (newValue === true) {
-                $scope.initialise();
-            }
-        });
+          $scope.initialise();
+        }, true);
     }
 
     // Handle ac-focus-when attribute. When set to true

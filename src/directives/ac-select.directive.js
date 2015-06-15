@@ -2,8 +2,8 @@ angular
     .module('acute.select')
     .directive('acSelect', acSelect);
 
-acSelect.$inject = ['$parse', '$log', 'acuteSelectService'];
-function acSelect($parse, $log, acuteSelectService) {
+acSelect.$inject = ['acuteSelectService'];
+function acSelect(acuteSelectService) {
     var defaultSettings = acuteSelectService.getSettings();
     var directive = {
         restrict: 'EAC',
@@ -14,7 +14,8 @@ function acSelect($parse, $log, acuteSelectService) {
             'acChange': '&',
             'keyField': '@acKey',
             'acRefresh': '=',
-            'acFocusWhen': '='
+            'acFocusWhen': '=',
+            'acKeepOpen': '='
         },
         replace: true,
         templateUrl: defaultSettings.templatePath + 'template.html',
@@ -114,9 +115,9 @@ function acSelectController(
 
     // If the ac-refresh attribute is set, watch it. If its value gets set to true, re-initialise.
     if ($scope.acRefresh !== undefined) {
-        $scope.$watch('acRefresh', function (newValue, oldValue) {
+        $scope.$watch('acRefresh.length', function (newValue, oldValue) {
           $scope.initialise();
-        }, true);
+        });
     }
 
     // Handle ac-focus-when attribute. When set to true
@@ -565,15 +566,18 @@ function acSelectController(
         $scope.initialSelection = null;
         $scope.initialItem = null;
 
-        if ($scope.popupVisible && (close || forceClose)) {
+        if ($scope.acKeepOpen && $scope.popupVisible && close) {
+        } else {
+          if ($scope.popupVisible && (close || forceClose)) {
             $scope.popupVisible = false;
             $scope.wrapperFocus = true;
             // If all data is loaded
             if ($scope.allDataLoaded && !$scope.settings.comboMode) {
-                // Clear the search text and filter
-                $scope.searchText = '';
-                clearClientFilter();
+              // Clear the search text and filter
+              $scope.searchText = '';
+              clearClientFilter();
             }
+          }
         }
     }
 

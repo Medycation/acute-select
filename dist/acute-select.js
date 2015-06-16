@@ -1123,7 +1123,7 @@ function safeApply($rootScope, $log) {
 }
 
 
-angular.module("acute.select").run(['$templateCache', function(a) { a.put('/acute.select/template.html', '<div class="ac-select-wrapper" ng-keydown="keyHandler($event)" tabindex="999" ac-focus="wrapperFocus" ng-focus="comboFocus = true">\n' +
+angular.module("acute.select").run(['$templateCache', function(a) { a.put('/acute.select/template.html', '<div class="ac-select-wrapper" ng-class="{\'ac-select-wrapper-focused\': popupVisible}" ng-keydown="keyHandler($event)" tabindex="999" ac-focus="wrapperFocus" ng-focus="comboFocus = true">\n' +
  '    <div ng-class="{\'ac-select-main\':true, \'ac-select-main-closed\':!popupVisible, \'ac-select-main-open\':popupVisible}" ng-click="mainClick($event)" ng-style="{\'minWidth\': settings.minWidth }" class="{{settings.customClass}}">\n' +
  '        <table class="ac-select-table" ng-click="togglePopup($event)">\n' +
  '            <tr>\n' +

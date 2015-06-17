@@ -1,4 +1,5 @@
 /*global module:false*/
+'use strict';
 
 module.exports = function(grunt) {
 
@@ -8,9 +9,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-bower');
   grunt.loadNpmTasks('grunt-broccoli');
-  
-  var fs = require('fs');
-  var path = require('path');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+
+  //var fs = require('fs');
+  //var path = require('path');
 
   // Project configuration.
   grunt.initConfig({
@@ -98,6 +100,26 @@ module.exports = function(grunt) {
         options: {livereload: true},
         files: ['./tmp/**/*']
       }
+    },
+
+    // Make sure code styles are up to par and there are no obvious mistakes
+    jshint: {
+      options: {
+        jshintrc: '.jshintrc',
+        reporter: require('jshint-stylish')
+      },
+      all: {
+        src: [
+          'Gruntfile.js',
+          'src/{,*/}*.js',
+        ]
+      },
+      test: {
+        options: {
+          jshintrc: 'test/.jshintrc'
+        },
+        src: ['test/spec/{,*/}*.js']
+      }
     }
   });
 
@@ -106,7 +128,7 @@ module.exports = function(grunt) {
 
 
 
-  grunt.registerTask('setup', ['clean', 'copy:dev', 'bower:dev']);
+  grunt.registerTask('setup', ['clean', 'jshint', 'copy:dev', 'bower:dev']);
   grunt.registerTask('default', ['setup', 'connect:livereload', 'watch']);
 
 };

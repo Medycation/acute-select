@@ -1,14 +1,16 @@
 {
-  "name": "acute-select",
-  "version": "0.1.6",
-  "homepage": "https://github.com/Medycation/acute-select",
+  "name": "acute-select-improved",
+  "version": "0.1.9",
+  "homepage": "https://github.com/sibeliusseraphini/acute-select",
   "authors": [
-    "Jason Aden <jasonaden@gmail.com>"
+    "John O'Connor",
+    "Jason Aden <jasonaden@gmail.com>",
+    "Sibelius Seraphini <sibeliusseraphini@gmail.com>"
   ],
   "description": "Bower implementation of https://github.com/john-oc/acute-select",
   "main": [
-    "acute-select.js",
-    "acute-select.css"
+    "dist/acute-select.js",
+    "dist/acute-select.css"
   ],
   "keywords": [
     "angular",
@@ -27,7 +29,6 @@
   "dependencies": {
     "angular": "~1.3.14",
     "bootstrap": "~3.3.2",
-    "font-awesome": "~4.3.0"
   },
   "devDependencies": {
     "angular-mocks": "~1.3.14"

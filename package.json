@@ -1,6 +1,6 @@
 {
-  "name": "acute-select",
-  "version": "0.1.6",
+  "name": "acute-select-improved",
+  "version": "0.1.9",
   "description": "Package for developing acute-select",
   "main": "dist/acute-select.js",
   "directories": {
@@ -22,18 +22,25 @@
     "grunt-contrib-copy": "~0.8.0",
     "grunt-bower": "~0.17.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "broccoli-funnel": "^0.2.3",
+    "broccoli-jade": "^1.0.1",
+    "broccoli-jshint": "^0.5.6",
+    "broccoli-stew": "^0.3.1",
+    "grunt-contrib-jshint": "^0.11.2",
+    "jshint-stylish": "^2.0.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/Medycation/acute-select.git"
+    "url": "git://github.com/sibeliusseraphini/acute-select
   },
   "author": "Jason Aden",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Medycation/acute-select/issues"
+    "url": "https://github.com/sibeliusseraphini/acute-select"
   },
-  "homepage": "https://github.com/Medycation/acute-select"
+  "homepage": "https://github.com/sibeliusseraphini/acute-select"
 }

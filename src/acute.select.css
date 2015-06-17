@@ -234,7 +234,7 @@ td.ac-select-image .fa {
 /* bootstrap glyphicons instead of font awesome */
 td.ac-select-image .glyphicon {
   position: relative;
-  top: -3px;
+  /*top: -3px;*/
   font-size:15px;
   color:#ccc;
 }

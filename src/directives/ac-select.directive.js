@@ -203,7 +203,8 @@ function acSelectController(
 
             // If data is not filtered
             if (!$scope.searchText) {
-                angular.copy($scope.items, $scope.allItems);
+                if ($scope.items !== $scope.allItems)
+                  angular.copy($scope.items, $scope.allItems);
             }
 
             $scope.setListHeight();
